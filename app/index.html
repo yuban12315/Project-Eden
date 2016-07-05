@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title ng-bind="title">Project Eden</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div id="top"></div>
+<div ng-controller="navctrl">
+    <nav class="navbar navbar-default" role="navigation" ng-show="ifshow()">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#sg-header">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">伊甸计划<span class="glyphicon glyphicon-grain" style="color: green"></span> </a>
+        </div>
+        <div class="collapse navbar-collapse col-lg-offset-9 col-md-offset-8 col-sm-offset-5" id="sg-header">
+            <info></info>
+        </div>
+    </nav>
+</div>
+<div class="row" ng-view></div>
+
+<script src="scripts/vendor/md5.js"></script>
+<script src="scripts/vendor/cookie.js"></script>
+<script src="scripts/vendor/jQuery.js"></script>
+<script src="scripts/vendor/bootstrap.js"></script>
+<script src="scripts/vendor/angular.js"></script>
+<script src="scripts/controller/controller.js"></script>
+<script src="scripts/directive/directive.js"></script>
+</body>
+</html>

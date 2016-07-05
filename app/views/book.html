@@ -1,0 +1,23 @@
+<div ng-show="ifload">
+    <div class="col-xs-12 book">
+        <div class="content">
+                <div>
+                    <h3 class="authur text">
+                        {{Book.UserName}}
+                    </h3>
+                    <h1 class="text-big banner" style="color: white">
+                        {{Book.Name}}
+                    </h1>
+                </div>
+            <div class="about margin-10px">
+                简介： <article class="text" ng-bind-html-unsafe="Book.About">简介：{{Book.About}}</article>
+            </div>
+            <div class="index nopadding">
+                    <ul>
+                        <li class="text li" ng-repeat="i in Chapters" ng-click="lookthis($index)">{{i.Title}}</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <p class="text-center col-lg-12 col-xs-12"><a class="text margin-10px" href="#/">返回首页</a></p>
+</div>

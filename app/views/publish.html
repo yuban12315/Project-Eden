@@ -1,0 +1,59 @@
+<div class="form text">
+    <h3 class="text text-center" style="word-break: break-all">
+        <span class="glyphicon glyphicon-grain" style="color: green"></span>
+        <span ng-show="route1.ifshow">{{route1.Name}}</span>
+        <span ng-show="route2.ifshow">{{route2.Name}}</span>
+        <span ng-show="route3.ifshow">{{route3.Name}}</span>
+        <span ng-show="route4.ifshow">{{chapter.Title}}</span>
+        <span class="glyphicon glyphicon-grain" style="color: green"></span>
+    </h3>
+    <div ng-show="route1.ifshow">
+        <p>已有作品列表： </p>
+        <ul>
+            <li ng-repeat="book in books" ng-class="ifbook($index)" ng-click="intoBook($index)">{{book.Name}}</li>
+        </ul>
+        <br>
+        <button class="btn btn-success col-xs-12" style="outline: 0" ng-click="newBook()">创建新作品</button>
+    </div>
+    <div ng-show="route2.ifshow">
+        <p>章节列表： </p>
+        <ul class="nopadding">
+            <li class="text-center" ng-repeat="chapter in chapters" ng-class="ifChapter($index)" ng-click="edit($index)">{{chapter.Title}}</li>
+        </ul>
+        <br>
+        <button class="btn btn-success col-xs-12" style="outline: 0" ng-click="newChapter()">添加新章节</button>
+        <button class="col-xs-12 btn btn-info" type="button" style="outline: 0;margin-top: 10px;"
+                ng-click="BacktoBook()">返回上一级
+        </button>
+    </div>
+    <div ng-show="route3.ifshow">
+        <div class="alert alert-warning margin-10px col-xs-12" ng-show="route3.e">
+            <p class="text-center">作品名不能留空</p>
+        </div>
+        <form class="col-xs-12" ng-submit="creatBook()">
+            作品名：
+            <input class="col-xs-12" type="text" ng-model="title" ng-init="title=''"><br>
+            简介：
+            <textarea class="inner col-xs-12" ng-model="content" ng-init="content='  '"></textarea>
+            <button class="col-xs-12 btn btn-success" type="submit" style="outline: 0;margin-top: 10px;">提交创建</button>
+            <button class="col-xs-12 btn btn-info" type="button" style="outline: 0;margin-top: 10px;"
+                    ng-click="BacktoBook()">返回上一级
+            </button>
+        </form>
+    </div>
+    <div ng-show="route4.ifshow">
+        <div class="alert alert-warning margin-10px col-xs-12" ng-show="route4.e">
+            <p class="text-center">章节名不能留空</p>
+        </div>
+        <form class="col-xs-12" ng-submit="upload()">
+            <p ng-bind="info.title"></p>
+            <input class="col-xs-12" type="text" ng-model="chapter.Title"><br>
+            <p ng-bind="info.content"></p>
+            <textarea class="inner col-xs-12 nopadding" ng-model="chapter.Content"></textarea>
+            <button class="col-xs-12 btn btn-success" type="submit" style="outline: 0;margin-top: 10px;">提交</button>
+            <button class="col-xs-12 btn btn-info" type="button" style="outline: 0;margin-top: 10px;"
+                    ng-click="BacktoChapter()">返回上一级
+            </button>
+        </form>
+    </div>
+</div>

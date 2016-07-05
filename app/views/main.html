@@ -1,0 +1,35 @@
+<div class="col-lg-8 col-md-8 col-xs-12 ">
+    <div class="hidden-lg hidden-md">
+        <button class="btn btn-success col-xs-12" style="outline: 0" ng-show="iflogin" ng-click="publish()">发布</button>
+    </div>
+    <div class="divide"></div>
+    <div class="novel-click" ng-repeat="data in datas">
+        <div class="margin shadow">
+            <div class="col-xs-12 nopadding">
+                <h2 class="text-big  text-center title">
+                    <span ng-click="more($index)">{{data.Title}}</span>
+                    <small class="pull-right banner nopadding" ng-click="thisBook($index)"><br
+                            class="hidden-lg hidden-md">--{{data.Name}}
+                    </small>
+                </h2>
+                <br class="hidden-lg hidden-md">
+            </div>
+            <article class="text" ng-bind-html-unsafe="data.Content" ng-click="more($index)"></article>
+            <p class="text pull-right">By&nbsp;&nbsp;{{data.UserName}}&nbsp;&nbsp;</p>
+            <br>
+        </div>
+    </div>
+    <div class="hidden-lg hidden-md">
+        <button class="btn btn-success col-xs-12" style="outline: 0;margin-bottom: 20px;" ng-click="library()">书库
+        </button>
+    </div>
+</div>
+<div class="col-lg-4 col-md-4 hidden-xs hidden-sm right-list">
+    <div class="divide"></div>
+    <button class="btn btn-success col-xs-12" style="outline: 0;" ng-show="iflogin" ng-click="publish()"><span
+            class="btn-text">发布</span></button>
+    <span ng-show="iflogin">&nbsp;</span>
+    <button class="btn btn-success col-xs-12" style="outline: 0"><span class="btn-text" ng-click="library()">书库</span>
+    </button>
+    <br>&nbsp;
+</div>

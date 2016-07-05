@@ -1,0 +1,18 @@
+<div class="container">
+    <div  ng-show="ifload">
+        <div class="novel margin">
+            <div class="col-xs-12 nopadding"  >
+                <h2 class="text-big  text-center title"  >
+                    <span>{{Chapter.Title}}</span>
+                </h2>
+            </div>
+            <article class="text" ng-bind-html-unsafe="Chapter.Content"  ng-click="more($index)"></article>
+        </div>
+        <div class="col-xs-12 alert alert-warning" ng-show="ifshow"><p class="text-center" >没有更多了</p></div>
+        <div class="col-xs-12" style="margin-bottom: 20px;">
+            <button class="col-xs-4 btn" ng-class="iflast()" ng-click="getlast()" style="outline: 0">上一章</button>
+            <button class="col-xs-4 btn btn-success" ng-click="menu()" style="outline: 0">目录</button>
+            <button class="col-xs-4 btn" ng-class="ifnext()" ng-click="getnext()" style="outline: 0">下一章</button>
+        </div>
+    </div>
+</div>
